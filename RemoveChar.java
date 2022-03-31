@@ -1,6 +1,7 @@
 public class RemoveChar {
     static String removeChar(String input1, String input2)
     {
+
         int j, count = 0, n = input1.length();
         char []t = input1.toCharArray();
         char[] a = input2.trim().toCharArray();

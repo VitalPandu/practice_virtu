@@ -1,15 +1,13 @@
 public class EncodedChar {
 
-    static String encodedChar(String input1, int k)
+    static String encodedChar(String input1, int input2)
     {
         int i, j, n = input1.length();
         int length,number, frequency;
         char[] str = input1.toCharArray();
-
         i = 0;
         while (i < n) {
             j = i; length = 0; frequency = 0;
-
             while (j < n && Character.isAlphabetic(str[j])){
                 j++;
                 length++;
@@ -19,15 +17,15 @@ public class EncodedChar {
                 j++;
             }
             number = frequency * length;
-            if (k > number){
-                k -= number;
+            if (input2 > number){
+                input2 -= number;
                 i = j;
             }else{
-                k--;
-                k %= length;
-                return Character.toString(str[i + k]);
+                input2--;
+                input2 %= length;
+                return Character.toString(str[i + input2]);
             }
         }
-        return Character.toString(str[k - 1]);
+        return Character.toString(str[input2 - 1]);
     }
 }
